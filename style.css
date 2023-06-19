@@ -1,0 +1,558 @@
+body {
+
+    background-color: rgba(146, 168, 84, 1);
+    font-family: 'Kodchasan', 'Montserrat', sans-serif;
+    color: rgba(224, 233, 199, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+}
+
+.header_container {
+    background-color: rgba(97, 111, 58, 1);
+
+    display: grid;
+    align-items: center;
+}
+
+.header_main {
+    font-size: 2em;
+    font-weight: 600;
+
+    display: grid;
+    justify-items: center;
+}
+
+.nav_time {
+    margin: 10% 0% 10% 0%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    justify-items: stretch;
+}
+
+.button_nav {
+    border: none;
+    background-color: rgba(146, 168, 84, 1);
+    color: rgba(224, 233, 199, 1);
+    font-family: 'Kodchasan', sans-serif;
+}
+
+.time_and_button {
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-rows: 40% 40%;
+    row-gap: 20%;
+    
+    align-items: center;
+}
+
+.time_show {
+    display: grid;
+    justify-items: center;
+
+    font-weight: 600;
+}
+
+.time_buttons {
+    height: 100%;
+
+    display: grid;
+    justify-items: center;
+}
+
+.button_time {
+    display: grid;
+    align-items: center;
+
+    height: 100%;
+    
+    background-color: rgba(202, 222, 146, 1);
+    border: none;
+    border-radius: 15px;
+
+    color: rgba(82, 94, 49, 1);
+
+    font-family: 'Kodchasan';
+    font-weight: 600;
+
+    justify-items: center;
+}
+#stop_button {
+    display: none;
+}
+#pause_button {
+    display: none;
+}
+
+.settings {
+    display: grid;
+    justify-items: stretch;
+
+    grid-template-columns: 40% auto;
+    column-gap: 20%;
+}
+
+.pom_count {
+    text-align: center;
+
+    background-color: rgba(167, 188, 109, 1);
+    border: none;
+    border-radius: 15px;
+
+    font-family: 'Kodchasan';
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgba(82, 93, 49, 1);
+}
+
+.change_time_buttons {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    column-gap: 10%;
+}
+
+.button_change_time {
+    background-color: rgba(146, 168, 84, 1);
+    border: none;
+
+    color: rgba(82, 93, 49, 1);
+
+    font-family: 'Kodchasan';
+    font-weight: 600;
+}
+
+.add_task {
+    display: grid;
+
+    margin-bottom: 10%;
+}
+
+.button_add_task {
+    font-family: 'Kodchasan';
+    font-size: 1em;
+
+    background-color: rgba(167, 188, 109, 1);
+    border: none;
+    border-radius: 15px;
+    color: rgba(82, 94, 49, 0.54);
+
+    display: grid;
+    align-items: center;
+
+    padding: 3% 20% 3% 20%;
+
+    grid-template-columns: 10% auto;
+    column-gap: 3%;
+}
+
+.new_task_form {
+    display: none;
+
+    border-radius: 15px;
+    grid-auto-rows: minmax(min-content, max-content);
+    row-gap: 10px;
+}
+
+.header_new_task {
+    display: grid;
+    justify-items: start;
+
+    color: rgba(224, 233, 199, 1);
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.input_new_task {
+    resize: none;
+
+    background-color: rgba(167, 188, 109, 1);
+    color: rgba(82, 93, 49, 0.6);
+    font-family: 'Montserrat', sans-serif;
+
+    border: none;
+    border-radius: 15px;
+    padding: 1%;
+
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.send_new_task {
+    background-color: rgba(202, 222, 146, 1);
+    border: none;
+    border-radius: 15px;
+
+    color: rgba(82, 94, 49, 1);
+
+    font-family: 'Kodchasan';
+    font-size: 0.9em;
+    font-weight: 600;
+
+    display: grid;
+    justify-self: start;
+    
+    padding: 2% 5% 2% 5%;
+}
+
+.current_tasks {
+    height: 100%;
+
+    border-top: 2px solid rgba(107, 121, 65, 1);
+
+    padding-top: 2%;
+    margin-bottom: 2%;
+}
+
+.curr_tasks {
+    display: grid;
+
+    grid-template-rows: repeat(1fr);
+    row-gap: 20px;
+}
+
+.finish_task {
+
+    display: grid;
+    align-content: center;
+    grid-template-columns: 35px auto 30px 30px;
+    column-gap: 5%;
+    margin: 2%;
+    padding: 1% 5% 1% 5%;
+
+    background-color: rgba(202, 222, 146, 1);
+    border-radius: 15px;
+    color: rgba(82, 94, 49, 1);
+}
+
+.task_text {
+    word-wrap: break-word;
+}
+
+.button_finish_task {
+    /* height: 40px; */
+    border-radius: 50px;
+    border: none;
+
+    background-color: rgba(167, 188, 109, 1);
+    font-size: 1em;
+    font-weight: 600;
+
+    color: rgba(202, 222, 146, 1);
+
+}
+
+.button_edit_task {
+    height: 30px;
+    font-size: 1em;
+    font-weight: 600;
+
+    background-color: rgba(202, 222, 146, 1);
+    color: rgba(167, 188, 109, 1);
+
+    border: none;
+}
+
+.button_delete_task {
+    height: 30px;
+    font-size: 1em;
+    font-weight: 600;
+
+    background-color: rgba(202, 222, 146, 1);
+    color: rgba(167, 188, 109, 1);
+
+    border: none;
+}
+
+
+
+
+@media screen and (orientation: portrait) {
+    .main {
+        margin: 0% 3% 3% 3%;
+    }
+    
+    .header_container {     
+        height: 7%;
+
+        display: grid;
+        justify-items: center;
+    }
+
+    .header_main {
+        margin-top: 5%;
+    }
+    
+    .main_time {
+        padding: 0% 0% 5% 0%;
+        border-bottom: 2px solid rgba(182, 193, 149, 1);
+    }
+    
+    .button_nav {
+        font-size: 0.7em;
+    }
+    
+    .time_and_button {
+        margin: 0% 0% 10% 0%;
+    }
+    
+    .time_show {
+        font-size: 4em;
+    }
+    
+    .button_time {    
+        padding: 5px 20px 5px 20px;
+
+        font-size: 1.5em;
+    }
+    
+    .settings {
+        margin-bottom: 5%;
+    }
+    
+    .one_setting {
+        display: grid;
+        align-items: start;
+    
+        width: 50%;
+        grid-template-rows: 50% 40%;
+        row-gap: 15%;
+    }
+
+    .text_setting {
+        font-size: 0.8em;
+    }
+    
+    .pom_count {
+        width: 40%;
+        height: 100%;
+    }
+    
+    .button_change_time {
+        font-size: 1.6em;
+    }
+    
+    .main_tasks {
+        display: grid;
+        margin: 5% 0% 3% 0%;
+    }
+    
+    .input_new_task {
+        width: 95%;
+        font-size: 1em;
+    }
+}
+
+
+
+@media (min-width: 300px) and (max-width: 399px) and (orientation: portrait) {
+    body {
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 400px) and (max-width: 499px) and (orientation: portrait) {
+    body {
+        font-size: 1.3em;
+    }
+}
+@media (min-width: 500px) and (max-width: 600px) and (orientation: portrait) {
+    body {
+        font-size: 1.4em;
+    }
+}
+@media (min-width: 600px) and (max-width: 699px) and (orientation: portrait) {
+    body {
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 700px) and (max-width: 799px) and (orientation: portrait) {
+    body {
+        font-size: 1.6em;
+    }
+}
+@media (min-width: 800px) and (max-width: 899px) and (orientation: portrait) {
+    body {
+        font-size: 1.7em;
+    }
+}
+@media (min-width: 900px) and (max-width: 1000px) and (orientation: portrait) {
+    body {
+        font-size: 1.8em;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (orientation: landscape) {
+    body {
+        font-size: 1.5em;
+    }
+
+    .main {
+        margin: 3% 0% 3% 0%;
+
+        display: grid;
+        grid-template-columns: 70% 30%;
+    }
+    
+    .header_container {
+        height: 5%;
+
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    
+    .main_time {
+        padding: 0% 8% 0% 8%;
+        border-right: 2px solid rgba(182, 193, 149, 1);
+    }
+    
+    .button_nav {
+        font-size: 1em;
+    }
+    
+    .time_and_button {
+    }
+    
+    .time_show {
+        font-size: 5em;
+    }
+        
+    .time_buttons {
+    }
+    
+    .button_time {    
+        padding: 10px 30px 10px 30px;
+
+        font-size: 2em;
+    }
+    
+    .settings {
+        padding: 4% 10% 0% 10%;
+    }
+    
+    .one_setting {
+        display: grid;
+        align-items: center;
+    
+        grid-template-columns: 60% auto;
+        column-gap: 8%;
+    }
+    
+    .pom_count {
+        width: 75%;
+        height: 70%;
+    }
+    
+    .button_change_time {
+        font-size: 2em;
+    }
+    
+    .main_tasks {
+        display: grid;
+        margin: 3% 10% 3% 10%;
+    }
+    
+    .input_new_task {
+        width: 100%;
+
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 399px) and (orientation: landscape) {
+    body {
+        font-size: 0.3em;
+    }
+}
+@media (min-width: 400px) and (max-width: 499px) and (orientation: landscape) {
+    body {
+        font-size: 0.4em;
+    }
+}
+@media (min-width: 500px) and (max-width: 600px) and (orientation: landscape) {
+    body {
+        font-size: 0.5em;
+    }
+}
+@media (min-width: 600px) and (max-width: 699px) and (orientation: landscape) {
+    body {
+        font-size: 0.6em;
+    }
+}
+@media (min-width: 700px) and (max-width: 799px) and (orientation: landscape) {
+    body {
+        font-size: 0.7em;
+    }
+}
+@media (min-width: 800px) and (max-width: 899px) and (orientation: landscape) {
+    body {
+        font-size: 0.8em;
+    }
+}
+@media (min-width: 900px) and (max-width: 999px) and (orientation: landscape) {
+    body {
+        font-size: 0.9em;
+    }
+}
+@media (min-width: 1000px) and (max-width: 1099px) and (orientation: landscape) {
+    body {
+        font-size: 1em;
+    }
+}
+@media (min-width: 1100px) and (max-width: 1199px) and (orientation: landscape) {
+    body {
+        font-size: 1.1em;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1299px) and (orientation: landscape) {
+    body {
+        font-size: 1.2em;
+    }
+}
+@media (min-width: 1300px) and (max-width: 1399px) and (orientation: landscape) {
+    body {
+        font-size: 1.3em;
+    }
+}
+@media (min-width: 1400px) and (max-width: 1499px) and (orientation: landscape) {
+    body {
+        font-size: 1.3em;
+    }
+}
+@media (min-width: 1500px) and (max-width: 1599px) and (orientation: landscape) {
+    body {
+        font-size: 1.4em;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1699px) and (orientation: landscape) {
+    body {
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 1700px) and (max-width: 1799px) and (orientation: landscape) {
+    body {
+        font-size: 1.6em;
+    }
+}
+@media (min-width: 1800px) and (max-width: 1899px) and (orientation: landscape) {
+    body {
+        font-size: 1.6em;
+    }
+}
+@media (min-width: 1900px) and (orientation: landscape) {
+    body {
+        font-size: 1.6em;
+    }
+}

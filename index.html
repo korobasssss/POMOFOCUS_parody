@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kodchasan&family=Montserrat&display=swap" rel="stylesheet">
+
+    <title>Pomofocus|parody</title>
+</head>
+<body>
+    <section class="container">
+
+        <header class="header_container">
+            <p>POMOFOCUS|parody</p>
+        </header>
+
+        <main class="main">
+            <main class="time">
+
+                <header class="header_main">
+                    <p>TIME</p>
+                </header>
+
+                <main class="main_time">
+
+                    <nav class="nav_time">
+                        <button id="button_nav_pomodoro" class="button_nav" onclick="Butter__time_navClick(this)">POMODORO</button>
+                        <button id="button_nav_short_break" class="button_nav" onclick="Butter__time_navClick(this)">SHORT BREAK</button>
+                        <button id="button_nav_long_break" class="button_nav" onclick="Butter__time_navClick(this)">LONG BREAK</button>
+                    </nav>
+
+                    <main class="time_and_button">
+
+                        <section class="time_show">
+                            <p id="time"></p>
+                        </section>
+
+                        <section class="time_buttons" id="button_start_stop_pause">
+                            <button class="button_time" id="start_button" onclick="start_timer()">START</button>
+                            <button class="button_time" id="stop_button" onclick="stop_timer()">STOP</button>
+                            <button class="button_time" id="pause_button" onclick="pause_timer()">PAUSE</button>
+                        </section>
+
+                    </main>
+
+                    <footer class="settings">
+
+                        <section class="one_setting">
+
+                            <section class="text_setting">
+                                <p>POMODORO'S COUNT</p>
+                            </section>
+
+                            <input class="pom_count" type="number" min="1" max="10" name="pom_count" value="1" oninput="change_pomodoro_count(this)">
+
+                        </section>
+
+                        <section class="one_setting">
+
+                            <section class="text_setting">
+                                <p>CHANGE TIME</p>
+                            </section>
+
+                            <section class="change_time_buttons">
+                                <button class="button_change_time" onclick="plus_time()"><p>+</p></button>
+                                <button class="button_change_time" onclick="minus_time()"><p>-</p></button>
+                            </section>
+
+                        </section>
+
+                    </footer>
+
+                </main>
+
+            </main>
+
+            <aside class="tasks">
+
+                <header class="header_main">
+                    <p>TASKS</p>
+                </header>
+
+                <main class="main_tasks">
+
+                    <header class="add_task">
+
+                        <button class="button_add_task" id="add_task" onclick="open_new_task_form()">
+                            <h3>+</h3>
+                            <p>ADD TASK</p>
+                        </button>
+
+                        <form class="new_task_form" id="new_task" method="post">
+                            <header class="header_new_task"> NEW TASK </header>
+                
+                            <textarea class="input_new_task" id="textarea_new_task" type="text" placeholder="type task"></textarea> 
+                            <input class="send_new_task" onclick="close_new_task_form()" type="button" value="SET A TASK">
+                            
+                        </form>
+
+                    </header>
+
+                    <main class="current_tasks">
+                        <ul id="curr_tasks" style="list-style-type: none;" class="curr_tasks">
+                        </ul>
+                    </main>
+                </main>
+
+            </aside>
+        </main>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
