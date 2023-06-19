@@ -187,7 +187,7 @@ function pause_timer() {
 
 function timer_func() {
     if (minute == 0 && second == 0) {
-        clearInterval(timer);
+        stop_timer();
     } else if (second == 0){
         second = 59;
         minute--;
@@ -215,7 +215,7 @@ function plus_time() {
 }
 
 function minus_time() {
-    if (minute - 1 >= 0) {
+    if (minute - 1 > 0) {
         minute--;
         time.innerHTML = make_string_time(minute) + ":" + make_string_time(second);
     }
