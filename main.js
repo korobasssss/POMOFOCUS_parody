@@ -225,6 +225,7 @@ function minus_time() {
 
 
 // создание новых задач
+var flag_one_edit = true; // булевский флаг, который позволяет редактировать только одну задачу (несколько однвременно нельзя)
 var new_task_form = document.getElementById('new_task');
 var button_add_task = document.getElementById('add_task');
 
@@ -270,32 +271,55 @@ function close_new_task_form() {
 var text; // в этой переменной будет храниться параграф с текстом для задачи
 
 function finish_task(element) {
-    element.style.color = "rgba(82, 94, 49, 1)";
-    var parent = element.parentNode;
+    if (flag_one_edit) {
+        element.style.color = "rgba(82, 94, 49, 1)";
+        var parent = element.parentNode;
 
-    console.log(parent);
-    var parent = element.parentNode;
-    var text_el = parent.children;
-    text = text_el[1]; // получаем наш параграф с задачей
-    text_el[1].style.cssText = "text-decoration: line-through;";   
+        console.log(parent);
+        var parent = element.parentNode;
+        var text_el = parent.children;
+        text = text_el[1]; // получаем наш параграф с задачей
+        text_el[1].style.cssText = "text-decoration: line-through;";   
+    }
+    
 }
 
 function edit_task(element) {
-    var parent = element.parentNode;
-    var text_el = parent.children;
-    text = text_el[1]; // получаем наш параграф с задачей
-    text_el[1].innerHTML = '<textarea class="input_new_task" id="edit_task" type="text" onblur="change_task_name(this)">' + text.textContent + '</textarea>';   
+    if (flag_one_edit) {
+        flag_one_edit = false;
+        var parent = element.parentNode;
+        var text_el = parent.children;
+        console.log(text_el[1]);
+        text = text_el[1]; // получаем наш параграф с задачей
+        text_el[1].innerHTML = '<textarea class="input_new_task" id="edit_task" type="text">' + text.textContent + '</textarea>' +  
+                                '<button class="button_save_edit_task" onclick="change_task_name(this)">SAVE</button>';
+                                 
+
+        // text_el[1].innerHTML = '<section class="textarea_and_button_edit">' +
+        //                             '<textarea class="input_new_task" id="edit_task" type="text">' + text.textContent + '</textarea>' +  
+        //                             '<button class="button_save_edit_task" onclick="change_task_name(this)">SAVE</button>' +
+        //                         '</section>'  ;
+    }
+    
 }
 
 function change_task_name(element) {
-    if (element.value != '') {
-        text.innerHTML = element.value;
+    flag_one_edit = true;
+    var parent = element.parentNode;
+    var text_el = parent.children;
+    var text = text_el[0];
+    console.log(text_el);
+    if (text.value != '') {
+        parent.innerHTML = text.value;
     }
     
 }
 
 function delete_task(element) {
-    var parent = element.parentNode;
-    var parent_parent = parent.parentNode;
-    parent_parent.remove();
+    if (flag_one_edit) {
+        var parent = element.parentNode;
+        var parent_parent = parent.parentNode;
+        parent_parent.remove();
+    }
+
 }

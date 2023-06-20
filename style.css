@@ -233,11 +233,18 @@ body {
 }
 
 .task_text {
-    word-wrap: break-word;
+    /* word-wrap: break-word; */
+    font-size: 0.9em;
+    hyphens:auto;
+
+    display: grid;
+    grid-template-rows: 60% auto;
+    row-gap: 5%;
+    justify-items: start;
 }
 
 .button_finish_task {
-    /* height: 40px; */
+    height: 40px;
     border-radius: 50px;
     border: none;
 
@@ -258,6 +265,20 @@ body {
     color: rgba(167, 188, 109, 1);
 
     border: none;
+}
+
+.button_save_edit_task {
+    background-color: rgba(167, 188, 109, 1);
+    border: none;
+    border-radius: 15px;
+
+    color: rgba(82, 94, 49, 1);
+
+    font-family: 'Kodchasan';
+    font-size: 0.6em;
+    font-weight: 600;
+    
+    padding: 2% 3% 2% 3%;
 }
 
 .button_delete_task {
