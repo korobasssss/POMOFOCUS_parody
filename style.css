@@ -245,14 +245,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .task_text {
-    /* word-wrap: break-word; */
     font-size: 0.9em;
     hyphens:auto;
 
-    display: grid;
-    grid-template-rows: 60% auto;
+    display: inline;
+    /* grid-template-rows: 60% auto;
     row-gap: 5%;
-    justify-items: start;
+    justify-items: start; */
 }
 
 .button_finish_task {

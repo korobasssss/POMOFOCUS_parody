@@ -254,12 +254,15 @@ function close_new_task_form() {
         array_nav[curr_index].setCurrTask(textarea.value);
 
         el_list = document.createElement('li');
-        el_list.innerHTML = '<li class="finish_task">' +
-                                '<button class="button_finish_task" onclick="finish_task(this)">&#10003;</button>' +
-                                '<p class="task_text">' + textarea.value + '</p>' +
+        el_list.classList.add("finish_task");
+        el_list.innerHTML =     '<button class="button_finish_task" onclick="finish_task(this)">&#10003;</button>' +
+                                '<p class="task_text"></p>' +
                                 '<button class="button_edit_task" onclick="edit_task(this)">&#9998;</button>' +
-                                '<button class="button_delete_task" onclick="delete_task(this)">&#10006;</button>' +
-                            '</li>';
+                                '<button class="button_delete_task" onclick="delete_task(this)">&#10006;</button>';
+        children_el_list = el_list.children;
+        console.log( children_el_list[1]);
+
+        children_el_list[1].innerHTML = textarea.value;
                             
         textarea.value = "";
 
@@ -293,12 +296,6 @@ function edit_task(element) {
         text = text_el[1]; // получаем наш параграф с задачей
         text_el[1].innerHTML = '<textarea class="input_new_task" id="edit_task" type="text">' + text.textContent + '</textarea>' +  
                                 '<button class="button_save_edit_task" onclick="change_task_name(this)">SAVE</button>';
-                                 
-
-        // text_el[1].innerHTML = '<section class="textarea_and_button_edit">' +
-        //                             '<textarea class="input_new_task" id="edit_task" type="text">' + text.textContent + '</textarea>' +  
-        //                             '<button class="button_save_edit_task" onclick="change_task_name(this)">SAVE</button>' +
-        //                         '</section>'  ;
     }
     
 }
