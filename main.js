@@ -315,8 +315,7 @@ function change_task_name(element) {
 function delete_task(element) {
     if (flag_one_edit) {
         var parent = element.parentNode;
-        var parent_parent = parent.parentNode;
-        parent_parent.remove();
+        parent.remove();
     }
 
 }
